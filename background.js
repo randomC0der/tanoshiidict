@@ -3,17 +3,17 @@
 let query = null;
 let tabId = null;
 
+async function openExample(word) {
+  query = word.selectionText;
+
+  const tab = await browser.tabs.create({
+    url: "https://www.tanoshiijapanese.com/dictionary/",
+  });
+
+  tabId = tab.id; // you already have the tab, so remember its id
+}
+
 browser.runtime.onInstalled.addListener(function (details) {
-  const openExample = async function (word) {
-    query = word.selectionText;
-
-    const tab = await browser.tabs.create({
-      url: "https://www.tanoshiijapanese.com/dictionary/",
-    });
-
-    tabId = tab.id; // you already have the tab, so remember its id
-  };
-
   browser.contextMenus.create({
     title: "Open in Tanoshii Dictionary",
     contexts: ["selection"],
