@@ -1,21 +1,17 @@
 "use strict";
 
-function Sleep(milliseconds) {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-}
+let query = null;
+let tabId = null;
 
 browser.runtime.onInstalled.addListener(function (details) {
   const openExample = async function (word) {
+    query = word.selectionText;
 
     const tab = await browser.tabs.create({
       url: "https://www.tanoshiijapanese.com/dictionary/",
     });
 
-    await Sleep(1000); // TODO: otherwise it can't establish the connection
-
-    browser.tabs
-      .sendMessage(tab.id, { query: word.selectionText })
-      .catch(e => console.error(e));
+    tabId = tab.id; // you already have the tab, so remember its id
   };
 
   browser.contextMenus.create({
@@ -23,4 +19,12 @@ browser.runtime.onInstalled.addListener(function (details) {
     contexts: ["selection"],
     onclick: openExample,
   });
+});
+
+browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.status === "ok" && query) {
+    browser.tabs
+      .sendMessage(tabId, { query })
+      .then(() => (query = null)); // reset the query
+  }
 });
