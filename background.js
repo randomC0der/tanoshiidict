@@ -1,22 +1,26 @@
+"use strict";
 
-var tabId;
-var query;
+function Sleep(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
 
-chrome.runtime.onMessage.addListener(
-  function (request, sender, sendResponse) {
-    if (request.status === "ok") {
-      chrome.tabs.sendMessage(tabId, { content: query });
-    }
-  }
-);
+browser.runtime.onInstalled.addListener(function (details) {
+  const openExample = async function (word) {
 
-openExample = function (word) {
-  query = word.selectionText;
-  chrome.tabs.create({ url: "https://www.tanoshiijapanese.com/dictionary" }, (tab) => { tabId = tab.id });
-};
+    const tab = await browser.tabs.create({
+      url: "https://www.tanoshiijapanese.com/dictionary/",
+    });
 
-chrome.contextMenus.create({
-  title: "Open in Tanoshii Dictionary",
-  contexts: ["selection"],
-  onclick: openExample
+    await Sleep(1000); // TODO: otherwise it can't establish the connection
+
+    browser.tabs
+      .sendMessage(tab.id, { query: word.selectionText })
+      .catch(e => console.error(e));
+  };
+
+  browser.contextMenus.create({
+    title: "Open in Tanoshii Dictionary",
+    contexts: ["selection"],
+    onclick: openExample,
+  });
 });

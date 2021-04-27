@@ -1,7 +1,7 @@
-chrome.extension.onMessage.addListener(
-  function (request, sender, sendResponse) {
-    document.getElementsByName("j")[0].value = request.content;
-  }
-);
+"use strict";
 
-chrome.runtime.sendMessage("replace_here", { status: "ok" });
+browser.runtime.onMessage.addListener(request => {
+  document.getElementsByName("j")[0].value = request.query;
+  document.getElementsByName("search")[0].click();
+  return Promise.resolve();
+});
