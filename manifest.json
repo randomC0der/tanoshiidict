@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Tanoshii Dictionary Search",
   "description": "Searches for the selected text in the Tanoshii Dictionary",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "minimum_chrome_version": "38",
   "permissions": ["contextMenus", "tabs", "activeTab"],
   "icons": {
@@ -14,8 +14,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["polyfill.js", "content.js"],
-      "run_at": "document_end"
+      "js": ["polyfill.js", "content.js"]
     }
   ]
 }
