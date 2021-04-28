@@ -3,7 +3,7 @@
 let query = null;
 let tabId = null;
 
-async function openExample(word) {
+async function openTab(word) {
   query = word.selectionText;
 
   const tab = await browser.tabs.create({
@@ -13,12 +13,10 @@ async function openExample(word) {
   tabId = tab.id; // you already have the tab, so remember its id
 }
 
-browser.runtime.onInstalled.addListener(function (details) {
 browser.contextMenus.create({
   title: "Open in Tanoshii Dictionary",
   contexts: ["selection"],
-    onclick: openExample,
-  });
+  onclick: openTab,
 });
 
 browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
