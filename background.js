@@ -14,15 +14,15 @@ async function openExample(word) {
 }
 
 browser.runtime.onInstalled.addListener(function (details) {
-  browser.contextMenus.create({
-    title: "Open in Tanoshii Dictionary",
-    contexts: ["selection"],
+browser.contextMenus.create({
+  title: "Open in Tanoshii Dictionary",
+  contexts: ["selection"],
     onclick: openExample,
   });
 });
 
 browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.status === "ok" && query) {
+  if (request.hostname === "www.tanoshiijapanese.com" && query) {
     browser.tabs
       .sendMessage(tabId, { query })
       .then(() => (query = null)); // reset the query

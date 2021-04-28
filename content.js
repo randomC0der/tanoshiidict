@@ -6,4 +6,4 @@ browser.runtime.onMessage.addListener(request => {
 });
 
 // The page is ready. Now the background script can send the query
-browser.runtime.sendMessage({ status: "ok" });
+browser.runtime.sendMessage({ hostname: document.location.hostname });
