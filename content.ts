@@ -2,8 +2,8 @@
 
 import browser from 'webextension-polyfill';
 
-browser.runtime.onMessage.addListener(request => {
-  document.getElementsByName("j")[0].value = request.query;
+browser.runtime.onMessage.addListener((message, sender) => {
+  document.getElementsByName("j")[0].setAttribute("value", message.query);
   document.getElementsByName("search")[0].click();
 });
 

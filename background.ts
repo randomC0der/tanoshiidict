@@ -2,8 +2,8 @@
 
 import browser from 'webextension-polyfill';
 
-let query = null;
-let tabId = null;
+let query: string = null;
+let tabId: number = 0;
 
 async function openTab(word) {
   query = word.selectionText;
@@ -21,7 +21,7 @@ browser.contextMenus.create({
   onclick: openTab,
 });
 
-browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+browser.runtime.onMessage.addListener(function (request, sender) {
   if (request.hostname === "www.tanoshiijapanese.com" && query) {
     browser.tabs
       .sendMessage(tabId, { query })
