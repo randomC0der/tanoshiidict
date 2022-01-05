@@ -1,5 +1,8 @@
 # tanoshiidict
 
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/MakeNowJust/sushi-ware)
+
 An unofficial extension for [Tanoshii](https://www.tanoshiijapanese.com/home/)
 
 ## Install
@@ -21,7 +24,7 @@ This works only with Chrome and other Chromium-based browsers (Brave, Opera, new
 
 ## License
 
-![GitHub](https://img.shields.io/github/license/randomC0der/tanoshiidict)
-[![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/MakeNowJust/sushi-ware)
-
-This project is licensed under the MIT License. However, you are free to buy me sushi if you like my work.
+This project is licensed under the Anti 996 License.
+It's an MIT-ish license but you must comply with labour laws.
+[Karoshi](https://en.wikipedia.org/wiki/Karoshi) and occupational burnout in general are not a joke.
+Also, feel free to buy me sushi if you like my work.
