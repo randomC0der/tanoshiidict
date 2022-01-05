@@ -1,0 +1,31 @@
+{
+  "name": "tanoshiidict",
+  "version": "0.2.1",
+  "description": "An unofficial extension for Tanoshii",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randomC0der/tanoshiidict.git"
+  },
+  "author": "Lukas Hein",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/randomC0der/tanoshiidict/issues"
+  },
+  "homepage": "https://github.com/randomC0der/tanoshiidict#readme",
+  "keywords": [
+    "dictionary",
+    "extension",
+    "japanese"
+  ],
+  "private": true,
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.1.0",
+    "parcel": "^2.1.0",
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.8.0"
+  }
+}

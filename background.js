@@ -1,5 +1,7 @@
 "use strict";
 
+import browser from 'webextension-polyfill';
+
 let query = null;
 let tabId = null;
 

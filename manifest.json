@@ -9,12 +9,12 @@
     "16": "assets/search.png"
   },
   "background": {
-    "scripts": ["polyfill.js", "background.js"]
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["polyfill.js", "content.js"]
+      "js": ["content.js"]
     }
   ]
 }
