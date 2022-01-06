@@ -1,13 +1,17 @@
 {
   "manifest_version": 2,
-  "name": "Tanoshii Dictionary Search",
-  "description": "Searches for the selected text in the Tanoshii Dictionary",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+
   "version": "1.1.0",
-  "minimum_chrome_version": "38",
+  "default_locale": "en",
+
   "permissions": ["contextMenus", "tabs", "activeTab"],
+
   "icons": {
     "48": "assets/search.png"
   },
+
   "background": {
     "scripts": ["background.ts"]
   },
@@ -16,5 +20,12 @@
       "matches": ["https://www.tanoshiijapanese.com/dictionary/"],
       "js": ["content.ts"]
     }
-  ]
+  ],
+
+  "minimum_chrome_version": "38",
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "56.0a1"
+    }
+  }
 }

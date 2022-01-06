@@ -1,0 +1,16 @@
+{
+  "extensionName": {
+    "message": "Tanoshii Wörterbuchsuche",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Sucht den ausgewählten Text im Tanoshii Wörterbuch.",
+    "description": "Description of the extension."
+  },
+
+  "contextMenuTitle": {
+    "message": "Im Tanoshii Wörterbuch öffnen",
+    "description": "Text shown in context menu."
+  }
+}

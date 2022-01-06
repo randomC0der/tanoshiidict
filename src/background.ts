@@ -16,7 +16,7 @@ async function openTab(word) {
 }
 
 browser.contextMenus.create({
-  title: "Open in Tanoshii Dictionary",
+  title: browser.i18n.getMessage("contextMenuTitle"),
   contexts: ["selection"],
   onclick: openTab,
 });
