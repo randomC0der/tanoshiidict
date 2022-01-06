@@ -8,4 +8,4 @@ browser.runtime.onMessage.addListener((message, sender) => {
 });
 
 // The page is ready. Now the background script can send the query
-browser.runtime.sendMessage({ hostname: document.location.hostname });
+browser.runtime.sendMessage({});

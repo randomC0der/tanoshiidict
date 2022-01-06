@@ -22,7 +22,7 @@ browser.contextMenus.create({
 });
 
 browser.runtime.onMessage.addListener(function (request, sender) {
-  if (request.hostname === "www.tanoshiijapanese.com" && query) {
+  if (query) {
     browser.tabs
       .sendMessage(tabId, { query })
       .then(() => (query = null)); // reset the query
