@@ -6,7 +6,7 @@
   "minimum_chrome_version": "38",
   "permissions": ["contextMenus", "tabs", "activeTab"],
   "icons": {
-    "16": "assets/search.png"
+    "48": "assets/search.png"
   },
   "background": {
     "scripts": ["background.ts"]
