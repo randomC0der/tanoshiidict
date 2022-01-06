@@ -10,18 +10,18 @@ An unofficial browser extension for [Tanoshii](https://www.tanoshiijapanese.com/
 As of now, I haven't published the extension yet, so you have to sideload it.
 The following instructions works only with Chrome and other Chromium-based browsers (Brave, Opera, new Edge, ...).
 
-1. Download the latest release
-2. Unzip it
-3. Open <chrome://extensions>
-4. Enable developer mode
-5. Click Load unpacked
-6. Find and select the extension folder
+1.  Download the latest release
+2.  Unzip it
+3.  Open <chrome://extensions>
+4.  Enable developer mode
+5.  Click Load unpacked
+6.  Find and select the extension folder
 
 ## Usage
 
-1. Select your Kanji
-2. Right click
-3. Select the dictionary
+1.  Select your Kanji
+2.  Right click
+3.  Select the dictionary
 
 ## Building from source
 
