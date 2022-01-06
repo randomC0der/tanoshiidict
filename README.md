@@ -7,20 +7,45 @@ An unofficial browser extension for [Tanoshii](https://www.tanoshiijapanese.com/
 
 ## Install
 
-This works only with Chrome and other Chromium-based browsers (Brave, Opera, new Edge, ...).
+As of now, I haven't published the extension yet, so you have to sideload it.
+The following instructions works only with Chrome and other Chromium-based browsers (Brave, Opera, new Edge, ...).
 
- 1. Download the latest release
- 2. Unzip it
- 3. Open <chrome://extensions>
- 4. Enable developer mode
- 5. Click Load unpacked
- 6. Find and select the extension folder
+1. Download the latest release
+2. Unzip it
+3. Open <chrome://extensions>
+4. Enable developer mode
+5. Click Load unpacked
+6. Find and select the extension folder
 
 ## Usage
 
- 1. Select your Kanji
- 2. Right click
- 3. Select the dictionary
+1. Select your Kanji
+2. Right click
+3. Select the dictionary
+
+## Building from source
+
+You'll need the latests version of [Node.js](https://nodejs.org/en/).
+Clone the repo and install all dependencies.
+
+```sh
+git clone https://github.com/randomC0der/tanoshiidict.git
+cd tanoshiidict
+npm install
+```
+
+For development with hot-reloading, use the following command.
+Make sure that parcel builds first (if it fails, consider to increase the delay).
+
+```sh
+npm run watch
+```
+
+To compile the project for production, use:
+
+```sh
+npm run build
+```
 
 ## License
 
