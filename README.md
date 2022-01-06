@@ -3,7 +3,7 @@
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 [![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/MakeNowJust/sushi-ware)
 
-An unofficial extension for [Tanoshii](https://www.tanoshiijapanese.com/home/)
+An unofficial browser extension for [Tanoshii](https://www.tanoshiijapanese.com/home/)
 
 ## Install
 
