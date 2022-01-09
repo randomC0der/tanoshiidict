@@ -1,1 +1,0 @@
-export default url = new URL("https://www.tanoshiijapanese.com/dictionary/");

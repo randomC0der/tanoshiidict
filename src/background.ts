@@ -1,7 +1,7 @@
 "use strict";
 
 import browser from "webextension-polyfill";
-import url from "./url"
+import url from "./url";
 
 let query: string = null;
 let tabId: number = 0;

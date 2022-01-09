@@ -1,7 +1,7 @@
 "use strict";
 
 import browser from "webextension-polyfill";
-import url from "./url"
+import url from "./url";
 
 browser.runtime.onMessage.addListener((message: { query: string, japanese: boolean }, sender: browser.Runtime.MessageSender) => {
   // inject the query
