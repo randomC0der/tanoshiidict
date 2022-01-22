@@ -3,14 +3,25 @@
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 [![SUSHI-WARE LICENSE](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/MakeNowJust/sushi-ware)
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/randomC0der/tanoshiidict)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pdjpgohimnaehjkddldennkocakohhjn)
+![Mozilla Add-on](https://img.shields.io/amo/v/tanoshii-dictionary-search)
+
 An unofficial browser extension for [Tanoshii](https://www.tanoshiijapanese.com/home/)
 
 ## Install
 
-As of now, I haven't published the extension yet, so you have to sideload it.
+[Get it for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tanoshii-dictionary-search/)
+
+[Get it from the Chrome Webstore](https://chrome.google.com/webstore/detail//pdjpgohimnaehjkddldennkocakohhjn?hl=de)
+
+Get it from the Edge Web Store (soon!)
+
+### Sideloading
+
 The following instructions works only with Chrome and other Chromium-based browsers (Brave, Opera, new Edge, ...).
 
-1.  Download the latest release
+1.  Download the [latest release](https://github.com/randomC0der/tanoshiidict/releases)
 2.  Unzip it
 3.  Open <chrome://extensions>
 4.  Enable developer mode
@@ -25,7 +36,7 @@ The following instructions works only with Chrome and other Chromium-based brows
 
 ## Building from source
 
-You'll need the latests version of [Node.js](https://nodejs.org/en/).
+You'll need the latest version of [Node.js](https://nodejs.org/en/).
 Clone the repo and install all dependencies.
 
 ```sh
