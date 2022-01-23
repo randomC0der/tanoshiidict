@@ -27,7 +27,9 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run build
-      - run: npx @wext/shipit firefox dist
+      - run: npx @wext/shipit chrome dist
         env:
-          WEXT_SHIPIT_FIREFOX_JWT_ISSUER: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_ISSUER }}
-          WEXT_SHIPIT_FIREFOX_JWT_SECRET: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_SECRET }}
+          WEXT_SHIPIT_CHROME_EXTENSION_ID: ${{ secrets.WEXT_SHIPIT_CHROME_EXTENSION_ID }}
+          WEXT_SHIPIT_CHROME_CLIENT_ID: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_ID }}
+          WEXT_SHIPIT_CHROME_CLIENT_SECRET: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_SECRET }}
+          WEXT_SHIPIT_CHROME_REFRESH_TOKEN: ${{ secrets.WEXT_SHIPIT_CHROME_REFRESH_TOKEN }}
