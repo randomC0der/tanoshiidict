@@ -1,4 +1,4 @@
 module.exports = {
-    sourceDir: "dist",
-    artifactsDir: "out",
+  sourceDir: "dist",
+  artifactsDir: "out",
 };
