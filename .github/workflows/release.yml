@@ -17,7 +17,7 @@ jobs:
       - run: npm ci
       # - run: npm test
 
-  publish-npm:
+  publish-addon:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run build
       - run: npx @wext/shipit firefox dist
         env:
           WEXT_SHIPIT_FIREFOX_JWT_ISSUER: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_ISSUER }}
