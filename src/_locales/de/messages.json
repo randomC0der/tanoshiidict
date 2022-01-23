@@ -9,8 +9,13 @@
     "description": "Description of the extension."
   },
 
-  "contextMenuTitle": {
-    "message": "Im Tanoshii Wörterbuch öffnen",
-    "description": "Text shown in context menu."
+  "contextMenuTitleJpEn": {
+    "message": "Im Tanoshii Wörterbuch öffnen (japanisch)",
+    "description": "Text shown in context menu for jp -> en search."
+  },
+
+  "contextMenuTitleEnJp": {
+    "message": "Im Tanoshii Wörterbuch öffnen (englisch)",
+    "description": "Text shown in context menu for en -> jp search."
   }
 }

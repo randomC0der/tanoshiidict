@@ -1,30 +1,20 @@
 "use strict";
 
 import browser from "webextension-polyfill";
-import url from "./url";
 
-let query: string = null;
-let tabId: number = 0;
-
-async function openTab(info: browser.Menus.OnClickData) {
-  query = info.selectionText;
-
-  const tab = await browser.tabs.create({
-    url: url.toString(),
+async function openTab(query: string, language: string): Promise<void> {
+  await browser.tabs.create({
+    url: `https://www.tanoshiijapanese.com/dictionary/index.cfm?${language}=${encodeURI(query)}`,
   });
-
-  tabId = tab.id; // remember the new tab's id so that we can inject the query later
 }
 
-browser.contextMenus.create({
-  title: browser.i18n.getMessage("contextMenuTitle"),
-  contexts: ["selection"],
-  onclick: openTab,
-});
+function createContextMenu(language: string): void {
+  browser.contextMenus.create({
+    title: browser.i18n.getMessage(language === "j" ? "contextMenuTitleJpEn" : "contextMenuTitleEnJp"),
+    contexts: ["selection"],
+    onclick: async (info) => await openTab(info.selectionText, language),
+  });
+}
 
-browser.runtime.onMessage.addListener(async function (message: { isSearchPage: boolean }) {
-  if (message.isSearchPage && query) {
-    await browser.tabs.sendMessage(tabId, { query });
-    query = null; // reset the query
-  }
-});
+createContextMenu("j");
+createContextMenu("e");
