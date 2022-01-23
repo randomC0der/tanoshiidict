@@ -17,9 +17,11 @@ An unofficial browser extension for [Tanoshii](https://www.tanoshiijapanese.com/
 
 Get it from the Edge Web Store (soon!)
 
+Get it for Opera (soon!)
+
 ### Sideloading
 
-The following instructions works only with Chrome and other Chromium-based browsers (Brave, Opera, new Edge, ...).
+The following instructions works only with Chrome and other Chromium-based browsers (Brave, new Edge, ...).
 
 1.  Download the [latest release](https://github.com/randomC0der/tanoshiidict/releases)
 2.  Unzip it
@@ -57,6 +59,10 @@ To compile the project for production, use:
 ```sh
 npm run build
 ```
+
+## Thanks
+
+Loosely based on https://github.com/fregante/browser-extension-template
 
 ## License
 
