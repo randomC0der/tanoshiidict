@@ -1,0 +1,32 @@
+name: Publish new addon version
+
+on:
+  workflow_dispatch: null
+  release:
+    types: [created]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      # - run: npm test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npx @wext/shipit firefox dist
+        env:
+          WEXT_SHIPIT_FIREFOX_JWT_ISSUER: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_ISSUER }}
+          WEXT_SHIPIT_FIREFOX_JWT_SECRET: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_SECRET }}

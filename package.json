@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "description": "An unofficial extension for Tanoshii",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist out",
     "build": "run-s clean build:*",
     "build:parcel": "parcel build src/manifest.json --no-content-hash --no-source-maps",
     "build:web-ext": "web-ext build",
