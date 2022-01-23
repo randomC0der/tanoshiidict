@@ -1,3 +1,6 @@
+env:
+  DIRECTORY: dist
+
 name: Publish new addon version
 
 on:
@@ -19,6 +22,13 @@ jobs:
 
   publish-addon:
     needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - firefox
+          - chrome
+          - opera
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,10 +36,24 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm run build
-      - run: npx @wext/shipit chrome dist
+      - run: npm run build --if-present
+      - name: Deploy
+        run: |
+          case ${{ matrix.command }} in
+            chrome)
+              cd $DIRECTORY && npx chrome-webstore-upload-cli@2 upload --auto-publish
+              ;;
+            firefox)
+              cd $DIRECTORY && npx web-ext-submit@6
+              ;;
+            opera)
+              echo todo
+              ;;
+          esac
         env:
-          WEXT_SHIPIT_CHROME_EXTENSION_ID: ${{ secrets.WEXT_SHIPIT_CHROME_EXTENSION_ID }}
-          WEXT_SHIPIT_CHROME_CLIENT_ID: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_ID }}
-          WEXT_SHIPIT_CHROME_CLIENT_SECRET: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_SECRET }}
-          WEXT_SHIPIT_CHROME_REFRESH_TOKEN: ${{ secrets.WEXT_SHIPIT_CHROME_REFRESH_TOKEN }}
+          EXTENSION_ID: ${{ secrets.WEXT_SHIPIT_CHROME_EXTENSION_ID }}
+          CLIENT_ID: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.WEXT_SHIPIT_CHROME_CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.WEXT_SHIPIT_CHROME_REFRESH_TOKEN }}
+          WEB_EXT_API_KEY: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.WEXT_SHIPIT_FIREFOX_JWT_SECRET }}
