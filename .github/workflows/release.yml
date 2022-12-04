@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm ci
@@ -31,8 +31,8 @@ jobs:
           - opera
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm ci
@@ -44,7 +44,7 @@ jobs:
               cd $DIRECTORY && npx chrome-webstore-upload-cli@2 upload --auto-publish
               ;;
             firefox)
-              cd $DIRECTORY && npx web-ext-submit@6
+              cd $DIRECTORY && npx web-ext-submit@7.4.0
               ;;
             opera)
               echo todo
